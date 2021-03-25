@@ -1,4 +1,17 @@
+'''聚类中的一些计算常用函数'''
 import numpy as np
+import math
+import random
+
+'''随机初始化聚类中心和隶属度矩阵'''
+def initcenter(data,cluster_n):
+    sample_index = random.sample(range(0,data.shape[0]),cluster_n) 
+    center = data[sample_index]
+    # (根据初始聚类中心)初始化隶属度矩阵
+    dist = distfcm(data,center)**2
+    U = np.zeros((center.shape[0],data.shape[0]))
+    U = tmp(dist)   #统一根据FCM的迭代式初始化聚类中心
+    return U,center
 
 '''欧式距离函数'''
     # 输入：
@@ -32,3 +45,29 @@ def centercompute(data,U):
     mf = mf.T 
     center = np.matmul(U,data) / mf
     return center
+
+'''根据类别标签生产先验隶属度矩阵'''
+def PriorMembership(label,U):
+    F = np.zeros(U.shape)
+    for i in range(len(label)):
+        F[int(label[i])-1][i] = 1
+    return F
+
+'''矩阵逐元素指数次方 exp(dist./gamma)  '''
+def MatrixElementPower(dist,gamma):
+    dist_exp = np.array(dist)
+    for i in range(dist.shape[0]):
+        for j in range(dist.shape[1]):
+            dist_exp[i][j] = math.exp(-dist[i][j]**2/gamma)
+    return dist_exp
+
+'''矩阵逐元素log'''
+def MatrixElementLog(U):
+    U_log = np.array(U)
+    for i in range(U.shape[0]):
+        for j in range(U.shape[1]):
+            if U[i][j] != 0 :
+                U_log[i][j] = math.log(U[i][j])
+            else:
+                U_log[i][j] = U[i][j]
+    return U_log
