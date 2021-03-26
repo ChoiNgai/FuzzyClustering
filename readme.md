@@ -24,8 +24,8 @@
 -  dataset：数据集
 - ClusterAidedComputing.py ：包括聚类常用的一些函数
 - ClusteringIteration.py ：包括聚类算法迭代式
-- test.py ： 测试脚本
 - FuzzyClustering.py ：模糊聚类算法
+- demo.py ： 演示脚本（运行此程序）
 
 
 
