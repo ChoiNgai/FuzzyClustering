@@ -26,6 +26,14 @@ def distfcm(data,center):
             dist[i][j] = np.sum( abs( data[j] - center[i] ) )
     return dist
     
+'''马氏距离'''
+def mahalanobis(x1,x2):
+    x = np.array([x1,x2])
+    D = np.cov(x)
+    invD = np.linalg.inv(D)
+    tp = x.T[0]-x.T[1]
+    dist = np.sqrt(np.dot(np.dot(tp,invD),tp.T))
+
 '''矩阵除以每一列之和（类似softmax函数）'''    
 def tmp(x):
     # 计算每行的最大值
@@ -53,7 +61,7 @@ def PriorMembership(label,U):
         F[int(label[i])-1][i] = 1
     return F
 
-'''矩阵逐元素指数次方 exp(dist./gamma)  '''
+'''矩阵逐元素指数次方 exp(dist./gamma)'''
 def MatrixElementPower(dist,gamma):
     dist_exp = np.array(dist)
     for i in range(dist.shape[0]):
@@ -71,3 +79,11 @@ def MatrixElementLog(U):
             else:
                 U_log[i][j] = U[i][j]
     return U_log
+
+'''高斯核函数'''
+def GaussKernel(dist,sigma):
+    dist_new = (dist**2)/(-2*sigma**2)
+    for i in range(dist.shape[0]):
+        for j in range(dist.shape[1]):
+            dist[i][j] = math.exp(dist_new[i][j])
+    return dist
