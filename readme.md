@@ -111,4 +111,6 @@ U,V,obj_fcn = smuc(data,cluster_n,label,max_iter = 1000,e = 0.5,lamda=1,printOn 
 
 迭代目标函数值变化图：
 
-![Figure_1](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/Figure_1.png)![image-20210325193158437](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/image-20210325193158437.png)
+![Figure 1](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/Figure_1.png)
+
+![Figure 2](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/image-20210325193158437.png)
