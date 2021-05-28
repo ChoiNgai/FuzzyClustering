@@ -1,6 +1,6 @@
-# <center>模糊聚类算法工具箱(python)</center>
+# 模糊聚类算法工具箱(python)
 
-<div align="center"> <img src = "https://www.python.org/static/community_logos/python-logo.png "Sample inline image"></img></div>
+<div align="center"><img src="https://www.python.org/static/community_logos/python-logo.png "></img></div>
 
 <div align="center"><img src="https://img.shields.io/badge/fuzzy clustering-模糊聚类-yellow"></img></div>
 
