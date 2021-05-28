@@ -1,6 +1,6 @@
 '''聚类中心矩阵和隶属度矩阵的迭代式'''
 import numpy as np
-import ClusterAidedComputing
+from FuzzyClustering import ClusterAidedComputing
 import math
 
 '''FCM 迭代式'''

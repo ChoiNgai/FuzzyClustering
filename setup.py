@@ -5,7 +5,7 @@ with open("readme.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="FuzzyClustering",
-    version="0.0.1",
+    version="0.0.2",
     author="CAIWEI",
     author_email="caiwei-email@qq.com",
     description="Fuzzy clustering algorithm toolbox",

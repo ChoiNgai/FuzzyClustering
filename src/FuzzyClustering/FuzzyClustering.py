@@ -1,8 +1,8 @@
 import numpy as np
 import random
 import math
-import ClusteringIteration
-import ClusterAidedComputing
+from FuzzyClustering import ClusteringIteration
+from FuzzyClustering import ClusterAidedComputing
 
 
 '''模糊C均值聚类算法（FCM）'''
