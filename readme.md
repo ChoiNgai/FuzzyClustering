@@ -25,21 +25,11 @@
 
 ## install
 
-以下两种版本安装一个即可
+通过以下方式安装（win10用户安装好python并配置好环境变量之后，打开cmd输入以下命令）：
 
-- 安装正式版（推荐，但可能暂未发布）
-
-  ```
-  pip install FuzzyClustering
-  ```
-
-- 安装开发版（此版本并不稳定）
-
-  ```
-  py -m pip install --index-url https://test.pypi.org/simple/ --no-deps FuzzyClustering
-  ```
-
-
+```
+pip install FuzzyClustering
+```
 
 ## project structure
 
