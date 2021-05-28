@@ -1,10 +1,10 @@
-# 模糊聚类
+# <center>模糊聚类算法工具箱(python)</center>
 
-![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
+<div align="center"> <img src = "https://www.python.org/static/community_logos/python-logo.png "Sample inline image"></img></div>
 
-<img src="https://img.shields.io/badge/fuzzy clustering-模糊聚类-yellow"></img>
+<div align="center"><img src="https://img.shields.io/badge/fuzzy clustering-模糊聚类-yellow"></img></div>
 
-<img src="https://img.shields.io/badge/semi--supervised-半监督-red"></img>
+<div align="center"><img src="https://img.shields.io/badge/semi--supervised-半监督-red"></img></div>
 
 ## introduce
 
