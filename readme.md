@@ -1,6 +1,10 @@
 # 模糊聚类
 
-**keywords: Fuzzy clustering，semi-supervised**
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
+
+![fuzzy clustering: 模糊聚类 (shields.io)](https://img.shields.io/badge/fuzzy clustering-模糊聚类-yellow)
+
+![半监督: semi-supervised (shields.io)](https://img.shields.io/badge/semi--supervised-半监督-red)
 
 ## introduce
 
@@ -16,6 +20,24 @@
 
 
 以这些算法为基础的相关论文可参考本人的谷歌学术主页：[Wei Cai，Guangdong University of Technology](https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=pYX8lisAAAAJ)
+
+
+
+## install
+
+以下两种版本安装一个即可
+
+- 安装正式版（推荐，但可能暂未发布）
+
+  ```
+  pip install FuzzyClustering
+  ```
+
+- 安装开发版（此版本并不稳定）
+
+  ```
+  py -m pip install --index-url https://test.pypi.org/simple/ --no-deps FuzzyClustering
+  ```
 
 
 
@@ -107,10 +129,44 @@ U,V,obj_fcn = esfcm(data,cluster_n,label,max_iter = 1000,e = 0.00001,lamda=1,pri
 U,V,obj_fcn = smuc(data,cluster_n,label,max_iter = 1000,e = 0.5,lamda=1,printOn = 1)
 ```
 
-### 例
+## demo
+
+```python
+import FuzzyClustering
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
+
+
+'''数据及参数设置'''
+data_route = r'dataset\iris.csv'
+label_route = r'dataset\irislabel.csv'
+
+with open(data_route,encoding = 'utf-8') as f:
+    data = np.loadtxt(f,delimiter = ",")
+with open(label_route,encoding = 'utf-8') as f:
+    label = np.loadtxt(f,delimiter = ",")
+
+cluster_n = int(np.max(label))
+data = ( data - np.min(data,axis=0)) / (np.max(data,axis=0) - np.min(data,axis=0))  #数据标准化
+
+'''模糊聚类算法'''
+U,center,fcm_obj_fcn = FuzzyClustering.smuc(data,cluster_n,label[1:20],max_iter = 100,e = 0.00001,lamda=0.5,printOn = 1)
+label_pred,abaaba = np.where(U==np.max(U,axis=0)) #最大值索引
+
+'''画图'''
+plt.plot(fcm_obj_fcn)
+plt.show()
+
+'''性能评价'''
+label_pred = label_pred + 1     #因为索引是从零开始，但标签是从1开始
+print(U[:,1])
+print("准确率：",accuracy_score(label.tolist(),label_pred.tolist()))
+```
 
 迭代目标函数值变化图：
 
 ![Figure 1](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/Figure_1.png)
 
 ![Figure 2](https://cdn.jsdelivr.net/gh/ChoiNgai/ImageServer/img/image-20210325193158437.png)
+
