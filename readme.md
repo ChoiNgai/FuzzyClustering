@@ -4,7 +4,7 @@
 
 ![fuzzy clustering: 模糊聚类 (shields.io)](https://img.shields.io/badge/fuzzy clustering-模糊聚类-yellow)
 
-![半监督: semi-supervised (shields.io)](https://img.shields.io/badge/semi--supervised-半监督-red)
+![semi-supervised: 半监督 (shields.io)](https://img.shields.io/badge/semi--supervised-半监督-red)
 
 ## introduce
 
