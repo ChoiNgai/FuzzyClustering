@@ -51,10 +51,6 @@
 
 
 
-算法都封装在FuzzyClustering.py里，FuzzyClustering.py调用ClusterAidedComputing.py和ClusteringIteration.py
-
-
-
 ## 算法调用
 
 ### 参数
